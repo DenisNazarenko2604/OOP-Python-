@@ -78,31 +78,47 @@
 # hello = Class1()
 
 
+# class Computer:
+#     def __init__(self):
+#         super().__init__()
+#         self.memory = 256
+#     def calculate(self):
+#         print("Calculating...")
+
+# class Display:
+#     def __init__(self):
+#         super().__init__()
+#         self.resolution = "4k"
+#     def display(self):
+#         print("I display the image on the screen...")
+
+
+# class Phone(Display, Computer):
+#     def print_info(self):
+#         print(self.resolution)
+#         print(self.memory)
+
+# phone = Phone()
+# phone.calculate()
+# phone.display()
+# phone.print_info()
+
 class Computer:
-    def __init__(self):
-        super().__init__()
-        self.memory = 256
-    def calculate(self):
-        print("Calculating...")
-
+    def __init__(self, model, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.model = model
+        self.memory = 128
 class Display:
-    def __init__(self):
-        super().__init__()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.resolution = "4k"
-    def display(self):
-        print("I display the image on the screen...")
-
-
-class Phone(Display, Computer):
+class SmartPhone(Display, Computer):
     def print_info(self):
+        print(self.model)
         print(self.resolution)
         print(self.memory)
-
-phone = Phone()
-phone.calculate()
-phone.display()
-phone.print_info()
-
+iphone = SmartPhone(model = "Last")
+iphone.print_info()
 
 
 
