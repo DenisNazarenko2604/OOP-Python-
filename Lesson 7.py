@@ -71,9 +71,10 @@ def checker(*exc_types):
     return checker
 
 @checker(NameError, TypeError, SyntaxError)
-def calculate(expression)
+def calculate(expression):
     return eval(expression)
 calculate("2+2")
+
 
 
 
